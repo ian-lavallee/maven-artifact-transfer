@@ -1,0 +1,99 @@
+<component-set>
+  <!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+  -->
+  <components>
+    <!-- UnArchiver -->
+    <component>
+      <role>org.eclipse.aether.impl.ArtifactDescriptorReader</role>
+      <implementation>org.apache.maven.repository.internal.DefaultArtifactDescriptorReader</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.VersionResolver</role>
+      <implementation>org.apache.maven.repository.internal.DefaultVersionResolver</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.VersionRangeResolver</role>
+      <implementation>org.apache.maven.repository.internal.DefaultVersionRangeResolver</implementation>
+    </component>
+    <component>
+      <role>java.util.Set&lt;org.eclipse.aether.RepositoryListener\&gt;</role>
+      <implementation>java.util.Set&lt;org.eclipse.aether.util.listener.ChainedRepositoryListener&gt;</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.ArtifactResolver</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultArtifactResolver</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.RepositorySystem</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultRepositorySystem</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.DependencyCollector</role>
+      <implementation>org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.Deployer</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultDeployer</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.Installer</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultInstaller</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.LocalRepositoryProvider</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultLocalRepositoryProvider</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.MetadataResolver</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultMetadataResolver</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.RemoteRepositoryManager</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultRemoteRepositoryManager</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.SyncContextFactory</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultSyncContextFactory</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.spi.log.LoggerFactory</role>
+      <implementation>org.eclipse.aether.internal.impl.slf4j.Slf4jLoggerFactory</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.OfflineController</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultOfflineController</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.RepositoryConnectorProvider</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultRepositoryConnectorProvider</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.RepositoryEventDispatcher</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultRepositoryEventDispatcher</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.impl.UpdateCheckManager</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultUpdateCheckManager</implementation>
+    </component>
+    <component>
+      <role>org.eclipse.aether.spi.io.FileProcessor</role>
+      <implementation>org.eclipse.aether.internal.impl.DefaultFileProcessor</implementation>
+    </component>
+  </components>
+</component-set>

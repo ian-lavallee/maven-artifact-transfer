@@ -61,7 +61,7 @@
 
   <build>
     <plugins>
-      <plugin>
+      <!--<plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <configuration>
@@ -82,8 +82,8 @@
               <arg>-Xlint:unchecked</arg>
             </compilerArgs>
           </configuration>
-      </plugin>
-      <plugin>
+      </plugin> -->
+      <!--<plugin>
         <groupId>org.codehaus.plexus</groupId>
         <artifactId>plexus-component-metadata</artifactId>
         <executions>
@@ -93,8 +93,8 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
+      </plugin>-->
+      <!--<plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
         <executions>
@@ -113,9 +113,9 @@
                 <filter>
                   <artifact>org.eclipse.aether:aether-util</artifact>
                   <includes>
-                    <!-- to prevent java.lang.ClassNotFoundException: org.eclipse.aether.util.artifact.SubArtifact (M3.1.1 - M3.3.3) -->
+                    &lt;!&ndash; to prevent java.lang.ClassNotFoundException: org.eclipse.aether.util.artifact.SubArtifact (M3.1.1 - M3.3.3) &ndash;&gt;
                     <include>org/eclipse/aether/util/artifact/SubArtifact.class</include>
-                    <!-- to prevent java.lang.ClassNotFoundException: org.eclipse.aether.util.filter.* (M3.1.1+ ) -->
+                    &lt;!&ndash; to prevent java.lang.ClassNotFoundException: org.eclipse.aether.util.filter.* (M3.1.1+ ) &ndash;&gt;
                     <include>org/eclipse/aether/util/filter/*</include>
                   </includes>
                 </filter>
@@ -123,8 +123,8 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
+      </plugin>-->
+      <!--<plugin>
         <groupId>org.apache.rat</groupId>
         <artifactId>apache-rat-plugin</artifactId>
         <configuration>
@@ -157,7 +157,7 @@
             <version>1.0</version>
           </signature>
         </configuration>
-      </plugin>
+      </plugin>-->
     </plugins>
   </build>
 
@@ -218,22 +218,34 @@
     <!-- Maven 3.1.x and above -->
     <dependency>
       <groupId>org.eclipse.aether</groupId>
-      <artifactId>aether-api</artifactId>
-      <version>0.9.0.M2</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.aether</groupId>
       <artifactId>aether-util</artifactId>
-      <version>0.9.0.M2</version>
-      <!-- provided scoped dependencies aren't shaded -->
+      <version>1.1.0</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.aether</groupId>
       <artifactId>aether-impl</artifactId>
-      <version>0.9.0.M2</version>
-      <scope>provided</scope>
+      <version>1.1.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.eclipse.aether</groupId>
+      <artifactId>aether-api</artifactId>
+      <version>1.1.0</version>
+    </dependency>
+    <!--<dependency>
+      <groupId>org.apache.maven.resolver</groupId>
+      <artifactId>maven-resolver-impl</artifactId>
+      <version>1.4.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.resolver</groupId>
+      <artifactId>maven-resolver-util</artifactId>
+      <version>1.4.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.resolver</groupId>
+      <artifactId>maven-resolver-api</artifactId>
+      <version>1.4.2</version>
+    </dependency>-->
 
     <dependency>
       <groupId>org.slf4j</groupId>

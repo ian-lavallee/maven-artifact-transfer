@@ -206,6 +206,18 @@ class Maven30ArtifactRepositoryAdapter implements ArtifactRepository
         throw new UnsupportedOperationException();
     }
 
+    /*@Override
+    public List<ArtifactRepository> getMirroredRepositories()
+    {
+        return null;
+    }
+
+    @Override
+    public void setMirroredRepositories( List<ArtifactRepository> list )
+    {
+
+    }
+*/
     @Override
     public String toString()
     {

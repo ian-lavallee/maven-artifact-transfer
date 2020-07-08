@@ -27,7 +27,6 @@ import org.apache.maven.artifact.Artifact;
 import org.apache.maven.artifact.DefaultArtifact;
 import org.apache.maven.artifact.handler.DefaultArtifactHandler;
 import org.apache.maven.project.DefaultProjectBuildingRequest;
-import org.apache.maven.repository.internal.MavenRepositorySystemSession;
 import org.apache.maven.shared.transfer.artifact.install.internal.Maven30ArtifactInstaller;
 import org.codehaus.plexus.PlexusTestCase;
 import org.sonatype.aether.RepositorySystem;
@@ -49,9 +48,9 @@ public class Maven30ArtifactInstallerTest extends PlexusTestCase
     public void testInstall() throws Exception
     {
         DefaultProjectBuildingRequest buildingRequest = new DefaultProjectBuildingRequest();
-        MavenRepositorySystemSession repositorySession = new MavenRepositorySystemSession();
+        /*MavenRepositorySystemSession repositorySession = new MavenRepositorySystemSession();
         repositorySession.setLocalRepositoryManager( new SimpleLocalRepositoryManager( localRepo ) );
-        buildingRequest.setRepositorySession( repositorySession );
+        buildingRequest.setRepositorySession( repositorySession );*/
         
         DefaultArtifactHandler artifactHandler = new DefaultArtifactHandler();
         artifactHandler.setExtension( "EXTENSION" );
@@ -67,8 +66,8 @@ public class Maven30ArtifactInstallerTest extends PlexusTestCase
         
         Collection<Artifact> mavenArtifacts = Arrays.<Artifact>asList( artifact, artifactWithClassifier );
         
-        MavenArtifactInstaller installer = new Maven30ArtifactInstaller( repositorySystem, repositorySession );
-        installer.install( mavenArtifacts );
+        /*MavenArtifactInstaller installer = new Maven30ArtifactInstaller( repositorySystem, repositorySession );*//*
+        installer.install( mavenArtifacts );*/
         
         assertTrue( new File( localRepo, "GROUPID/ARTIFACTID/VERSION/ARTIFACTID-VERSION.EXTENSION" ).exists() );
         assertTrue( new File( localRepo, "GROUPID/ARTIFACTID/VERSION/ARTIFACTID-VERSION-CLASSIFIER.EXTENSION" ).exists() );
